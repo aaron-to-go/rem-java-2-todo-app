@@ -9,7 +9,7 @@ function ToDoCard ({toDo, deleteTodo, updateTodo}) {
             <p>{toDo.status}</p>
             <RedButton onClick={() => deleteTodo(toDo.id)}>Delete</RedButton>
             <YellowButton>Details</YellowButton>
-            <GreenButton onClick={() => updateTodo(toDo)} disabled={toDo.status === "DONE"}>Advance</GreenButton>
+            <GreenButton onClick={() => updateTodo(toDo)} hidden={toDo.status === "DONE"}>Advance</GreenButton>
         </div>
     )
 }
