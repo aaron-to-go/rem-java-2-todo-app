@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {PropTypes} from "prop-types";
 const Wrapper = styled.div`
   background-image: url("https://media.tenor.com/images/a11fa9e506233c263784673c78ef7815/tenor.gif");
   text-align: end;
@@ -69,6 +70,14 @@ function ToDoCard ({toDo, deleteTodo, updateTodo}) {
     )
 }
 export default ToDoCard;
+
+ToDoCard.propTypes={
+    toDo: PropTypes.shape({description: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    status: PropTypes.string.isRequired}).isRequired,
+    deleteTodo: PropTypes.func.isRequired,
+    updateTodo: PropTypes.func.isRequired
+}
 
 const RedButton = styled.button`
   width: 100px;
