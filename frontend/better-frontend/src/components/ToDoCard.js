@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {PropTypes} from "prop-types";
+import TodoDetailsPopUp from "./TodoDetailsPopUp";
 
 const Wrapper = styled.div`
   background-image: url("https://media.tenor.com/images/a11fa9e506233c263784673c78ef7815/tenor.gif");
@@ -65,7 +66,7 @@ function ToDoCard ({toDo, deleteTodo, updateTodo}) {
             <Description>{toDo.description}</Description>
             <Status>{toDo.status}</Status>
             <RedButton onClick={() => deleteTodo(toDo.id)}>Delete</RedButton>
-            <YellowButton>Details</YellowButton>
+            <YellowButton onClick={() => {TodoDetailsPopUp()}}>Details</YellowButton>
             <GreenButton onClick={() => updateTodo(toDo)} hidden={toDo.status === "DONE"}>Advance</GreenButton>
         </Wrapper>
     )
