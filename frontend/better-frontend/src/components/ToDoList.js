@@ -9,7 +9,7 @@ const useStyles = makeStyles(() => ({
 
         padding: 10,
 
-        backgroundColor: 'lightgrey',
+        backgroundColor: 'transparent',
     }
 }))
 

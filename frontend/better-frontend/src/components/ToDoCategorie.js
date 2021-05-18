@@ -4,7 +4,7 @@ import makeStyles from "@material-ui/core/styles/makeStyles";
 const useStyles = makeStyles(() => ({
     TodoCategorie:{
         display: "flex",
-        backgroundColor: 'hotpink',
+        backgroundColor: 'transparent',
         padding: 0,
     },
 

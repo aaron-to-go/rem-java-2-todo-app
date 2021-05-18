@@ -1,7 +1,6 @@
 import styled from "styled-components";
 const Wrapper = styled.div`
   background-image: url("https://media.tenor.com/images/a11fa9e506233c263784673c78ef7815/tenor.gif");
-  font-family: "Comic Sans MS", fantasy;
   text-align: end;
   display: flex;
   flex-direction: column;
