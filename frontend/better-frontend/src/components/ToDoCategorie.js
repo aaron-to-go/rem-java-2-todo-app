@@ -1,5 +1,6 @@
 import ToDoCard from "./ToDoCard";
 import makeStyles from "@material-ui/core/styles/makeStyles";
+import {PropTypes} from "prop-types";
 
 const useStyles = makeStyles(() => ({
     TodoCategorie:{
@@ -34,3 +35,13 @@ function ToDoCategorie ({todos, categorieName, updateTodo, deleteTodo}) {
 }
 
 export default ToDoCategorie;
+
+ToDoCategorie.propTypes = {
+    todos : PropTypes.arrayOf(PropTypes.shape({
+        description: PropTypes.string.isRequired,
+        id: PropTypes.string.isRequired,
+        status: PropTypes.string.isRequired})),
+    categorieName : PropTypes.string.isRequired,
+    updateTodo: PropTypes.func.isRequired,
+    deleteTodo: PropTypes.func.isRequired
+}
