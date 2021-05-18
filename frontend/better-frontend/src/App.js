@@ -3,6 +3,7 @@ import ToDoList from "./components/ToDoList";
 import {useEffect, useState} from "react";
 import {addTodoApi, deleteTodoApi, getTodosApi, updateTodoApi} from "./service/TodoApi";
 import Input from "./components/Input";
+import sound from "./resources/NeverGonnaGiveYouUpOriginal.mp3"
 
 
 
@@ -50,8 +51,14 @@ export default function App() {
 
   return (
     <div className="App">
+
+        <audio controls autoPlay={true}>
+            <source src={sound} type="audio/mpeg"/>
+        </audio>
         <ToDoList todos={todos} updateTodo={advanceTodo} deleteTodo={deleteTodo}/>
+
         <Input addToDo={addTodo}/>
+
     </div>
   );
 }
