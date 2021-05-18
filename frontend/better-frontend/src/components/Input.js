@@ -31,6 +31,6 @@ const InputField = styled.input`
   height: 40px;
   border-radius: 12px;
   background-color: lightseagreen;
-  color: black;
+  color: black; 
   
 `
