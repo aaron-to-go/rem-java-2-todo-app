@@ -1,4 +1,5 @@
 import styled from "styled-components/macro";
+import {PropTypes} from "prop-types";
 
 function Input({addToDo}){
     let inputText = ""
@@ -10,6 +11,10 @@ function Input({addToDo}){
     )
 }
 export default Input
+
+Input.propTypes ={
+    addToDo: PropTypes.func.isRequired
+}
 
 const Footer = styled.text`
   position: fixed;

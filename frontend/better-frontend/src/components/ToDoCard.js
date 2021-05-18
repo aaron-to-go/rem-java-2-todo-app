@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {PropTypes} from "prop-types";
+
 const Wrapper = styled.div`
   background-image: url("https://media.tenor.com/images/a11fa9e506233c263784673c78ef7815/tenor.gif");
   text-align: end;
