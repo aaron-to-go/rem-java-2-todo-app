@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  background: url("resources/main_cursor.gif");
+  font-family: "Comic Sans MS";
+}
+
