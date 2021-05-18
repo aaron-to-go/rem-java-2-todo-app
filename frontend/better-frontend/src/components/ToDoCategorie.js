@@ -40,7 +40,7 @@ ToDoCategorie.propTypes = {
     todos : PropTypes.arrayOf(PropTypes.shape({
         description: PropTypes.string.isRequired,
         id: PropTypes.string.isRequired,
-        status: PropTypes.string.isRequired})),
+        status: PropTypes.string.isRequired})).isRequired,
     categorieName : PropTypes.string.isRequired,
     updateTodo: PropTypes.func.isRequired,
     deleteTodo: PropTypes.func.isRequired
