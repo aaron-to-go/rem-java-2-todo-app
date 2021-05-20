@@ -1,5 +1,7 @@
 import {useState} from "react";
 import { useHistory } from 'react-router-dom';
+import {Button, IconButton} from "@material-ui/core";
+import SaveIcon from '@material-ui/icons/Save';
 
 export default function TodoForm({todo, updateTodo}) {
     const [description, setDescription] = useState(todo.description)
@@ -28,7 +30,10 @@ export default function TodoForm({todo, updateTodo}) {
             </div>
 
 
-            <button>Save</button>
+            <Button  onClick={(event) => {handleSave(event)}} variant="contained" color="secondary" startIcon={<SaveIcon />}>Save</Button>
+            <IconButton aria-label="delete" onClick={(event) => {handleSave(event)}}>
+                <SaveIcon />
+            </IconButton>
     </form>
     );
 }

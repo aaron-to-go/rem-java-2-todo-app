@@ -1,6 +1,8 @@
 import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
+import ButtonGroup from '@material-ui/core/ButtonGroup';
+import {Button} from "@material-ui/core";
 
 TodoItem.propTypes = {
   todo: PropTypes.shape({
@@ -13,14 +15,22 @@ TodoItem.propTypes = {
 }
 
 export default function TodoItem({ todo, onAdvance, onRemove }) {
+
+    const history = useHistory()
+
+    const onDetail = () => {
+            const path = '/todo/' + todo.id;
+        history.push(path);
+    }
+
   return (
     <Todo>
       <p>{todo.description}</p>
-      <Link to={'/todo/' + todo.id}>Details page</Link>
-      <ButtonGroup>
-        <button onClick={() => onRemove(todo.id)}>Delete</button>
+      <ButtonGroup size={"small"} color={"secondary"}>
+               <Button color={"secondary"} onClick={() => onRemove(todo.id)}>Delete</Button>
+          <Button color={"primary"} onClick={() => onDetail()}>Details</Button>
         {todo.status !== 'DONE' && (
-          <button onClick={() => onAdvance(todo)}>Advance</button>
+          <Button color={"primary"} onClick={() => onAdvance(todo)}>Advance</Button>
         )}
       </ButtonGroup>
     </Todo>
@@ -36,8 +46,8 @@ const Todo = styled.section`
     text-align: center;
   }
 `
-const ButtonGroup = styled.div`
+/*const ButtonGroup = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 24px;
-`
+`*/
